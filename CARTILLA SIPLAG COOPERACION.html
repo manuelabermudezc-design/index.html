@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartilla SIPLAG · UNGRD 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c9001:#1B5EBF;--c9001l:#E8F0FB;--c9001m:#4A84E8;
+  --c45:#1A7A52;--c45l:#E5F5ED;--c45m:#36B67A;
+  --c14:#B85A00;--c14l:#FEF0E0;--c14m:#F0891A;
+  --c27:#6B2FA0;--c27l:#F2EAFE;--c27m:#9C59D1;
+  --bg:#F8F5FF;--dark:#1A1035;
+}
+body{font-family:'Nunito Sans',sans-serif;background:#F0EEF8;color:#1A1035;line-height:1.5}
+.page{max-width:900px;margin:0 auto}
+
+/* ====== PORTADA ====== */
+.cover{background:linear-gradient(145deg,#0D0828 0%,#1B1060 50%,#2A1070 100%);padding:0;overflow:hidden;position:relative;min-height:380px;display:flex;flex-direction:column;justify-content:flex-end}
+.cover-stars{position:absolute;inset:0;background-image:radial-gradient(2px 2px at 20% 30%,rgba(255,255,255,0.3),transparent),radial-gradient(2px 2px at 60% 15%,rgba(255,255,255,0.4),transparent),radial-gradient(1px 1px at 80% 60%,rgba(255,255,255,0.2),transparent),radial-gradient(2px 2px at 40% 75%,rgba(255,255,255,0.15),transparent),radial-gradient(1px 1px at 10% 80%,rgba(255,255,255,0.3),transparent)}
+.cover-circles{position:absolute;top:-60px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(120,60,230,0.4),transparent 70%)}
+.cover-circles2{position:absolute;bottom:-100px;left:-60px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(30,180,120,0.25),transparent 70%)}
+.cover-content{position:relative;z-index:2;padding:48px 48px 40px}
+.cover-ungrd{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.cover-ungrd-badge{background:#FFC107;border-radius:8px;padding:6px 14px;font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#1A1035;letter-spacing:1px}
+.cover-ungrd span{color:rgba(255,255,255,0.6);font-size:13px}
+.cover h1{font-family:'Nunito',sans-serif;font-weight:900;font-size:56px;color:#fff;line-height:1;margin-bottom:12px;letter-spacing:-1px}
+.cover h1 em{display:block;color:#FFC107;font-style:normal;font-size:48px}
+.cover-sub{color:rgba(255,255,255,0.7);font-size:16px;max-width:500px;margin-bottom:32px}
+.cover-pills{display:flex;gap:10px;flex-wrap:wrap}
+.cover-pill{border-radius:30px;padding:8px 18px;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;border:2px solid;display:flex;align-items:center;gap:6px}
+.cp1{background:rgba(27,94,191,0.3);border-color:#4A84E8;color:#93C5FF}
+.cp2{background:rgba(26,122,82,0.3);border-color:#36B67A;color:#86EFAC}
+.cp3{background:rgba(184,90,0,0.3);border-color:#F0891A;color:#FED7AA}
+.cp4{background:rgba(107,47,160,0.3);border-color:#9C59D1;color:#D8B4FE}
+.cover-bottom{background:#FFC107;padding:18px 48px;display:flex;align-items:center;gap:16px;position:relative;z-index:2}
+.cover-bottom p{font-family:'Nunito',sans-serif;font-weight:800;color:#1A1035;font-size:14px}
+
+/* ====== SIPLAG BASE ====== */
+.siplag-section{background:#fff;padding:48px}
+.section-tag{display:inline-flex;align-items:center;gap:8px;background:#1A1035;color:#FFC107;font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;letter-spacing:2px;padding:6px 16px;border-radius:4px;margin-bottom:20px;text-transform:uppercase}
+.section-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:36px;color:#1A1035;margin-bottom:6px;letter-spacing:-0.5px}
+.section-sub{font-size:15px;color:#666;margin-bottom:32px}
+
+.siplag-def{background:linear-gradient(135deg,#1A1035,#2D1B6E);border-radius:16px;padding:28px 32px;margin-bottom:28px;position:relative;overflow:hidden}
+.siplag-def::after{content:'GRETA';position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:'Nunito',sans-serif;font-weight:900;font-size:100px;color:rgba(255,255,255,0.04);letter-spacing:-3px}
+.siplag-def p{color:rgba(255,255,255,0.9);font-size:16px;line-height:1.7;position:relative;z-index:1}
+.siplag-def p strong{color:#FFC107}
+
+.greta-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:28px}
+.greta-item{border-radius:12px;padding:16px 12px;text-align:center;border:2px solid}
+.greta-letter{font-family:'Nunito',sans-serif;font-weight:900;font-size:32px;display:block;margin-bottom:4px}
+.greta-word{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
+
+.mv-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.mv-card{border-radius:14px;padding:24px;position:relative;overflow:hidden}
+.mv-card::before{font-size:80px;position:absolute;right:-10px;top:-10px;opacity:0.15;line-height:1}
+.mv-card h3{font-family:'Nunito',sans-serif;font-weight:900;font-size:18px;margin-bottom:10px}
+.mv-card p{font-size:14px;line-height:1.6}
+
+.iso-overview{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+.iso-mini{border-radius:14px;padding:20px 16px;text-align:center;cursor:default}
+.iso-mini .iso-ico{font-size:36px;margin-bottom:10px;display:block}
+.iso-mini .iso-num{font-family:'Nunito',sans-serif;font-weight:900;font-size:11px;letter-spacing:1px;display:block;margin-bottom:6px}
+.iso-mini h3{font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;margin-bottom:4px}
+.iso-mini p{font-size:12px;line-height:1.4}
+
+.politica-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.pol-item{border-radius:10px;padding:14px;display:flex;gap:10px;align-items:flex-start}
+.pol-num{font-family:'Nunito',sans-serif;font-weight:900;font-size:22px;flex-shrink:0;line-height:1}
+.pol-text{font-size:12px;line-height:1.5;font-weight:600}
+
+/* ====== ISO SECTIONS GENERIC ====== */
+.iso-section{padding:48px}
+.iso-header{border-radius:20px;padding:32px 36px;margin-bottom:32px;position:relative;overflow:hidden;display:flex;align-items:flex-start;gap:24px}
+.iso-header-ico{font-size:64px;flex-shrink:0;position:relative;z-index:1}
+.iso-header-content{position:relative;z-index:1}
+.iso-header h2{font-family:'Nunito',sans-serif;font-weight:900;font-size:32px;margin-bottom:6px;letter-spacing:-0.5px}
+.iso-header .iso-badge{display:inline-block;font-family:'Nunito',sans-serif;font-weight:900;font-size:11px;letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:10px;text-transform:uppercase}
+.iso-header p{font-size:14px;line-height:1.6;opacity:0.9;max-width:520px}
+.iso-header::after{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;opacity:0.1}
+
+/* OBJETIVO BOX */
+.obj-box{border-radius:14px;padding:20px 24px;margin-bottom:24px;display:flex;gap:16px;align-items:flex-start}
+.obj-box .obj-ico{font-size:32px;flex-shrink:0}
+.obj-box h4{font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.obj-box p{font-size:14px;line-height:1.6}
+
+/* ITEMS GRID */
+.items-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;display:flex;align-items:center;gap:8px;color:#1A1035}
+.items-title::before{content:'';display:block;width:4px;height:20px;border-radius:2px}
+
+.lineas-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.linea-card{border-radius:12px;padding:18px;display:flex;gap:14px;align-items:flex-start}
+.linea-num{font-family:'Nunito',sans-serif;font-weight:900;font-size:28px;flex-shrink:0;line-height:1;margin-top:-2px}
+.linea-content h4{font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;margin-bottom:4px}
+.linea-content p{font-size:12px;line-height:1.5}
+.linea-meta{display:inline-block;font-size:11px;font-weight:800;padding:2px 10px;border-radius:20px;margin-top:6px}
+
+/* INDICADOR VISUAL */
+.ind-visual{border-radius:14px;overflow:hidden;margin-bottom:24px}
+.ind-top{padding:20px 24px;display:flex;align-items:center;justify-content:space-between}
+.ind-top h3{font-family:'Nunito',sans-serif;font-weight:900;font-size:16px;color:#fff}
+.ind-badge{font-size:10px;font-weight:800;letter-spacing:2px;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,0.2);color:#fff;text-transform:uppercase}
+.ind-body{background:#fff;padding:20px 24px}
+.ind-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px dashed rgba(0,0,0,0.08);font-size:13px}
+.ind-row:last-child{border:none}
+.ind-row .k{color:#999;font-size:12px;font-weight:600}
+.ind-row .v{font-weight:700}
+.metas-bar{display:flex;gap:8px;padding:16px 24px;background:#F8F8F8}
+.meta-b{flex:1;border-radius:10px;padding:12px 8px;text-align:center;font-size:11px;font-weight:700}
+.meta-b .mn{display:block;font-family:'Nunito',sans-serif;font-weight:900;font-size:22px;margin-bottom:2px}
+
+/* PROCEDIMIENTOS */
+.proc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.proc-card{border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:center}
+.proc-check{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;font-weight:900}
+.proc-info{}
+.proc-code{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.proc-name{font-size:13px;font-weight:700;margin-top:2px}
+
+/* RIESGOS */
+.riesgos-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px}
+.riesgo-card{border-radius:14px;padding:20px;position:relative;overflow:hidden}
+.riesgo-card::before{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;opacity:0.1}
+.nivel-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:900;padding:4px 12px;border-radius:20px;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px}
+.riesgo-card h4{font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;margin-bottom:8px;line-height:1.3}
+.riesgo-card .r-desc{font-size:12px;line-height:1.5;margin-bottom:10px}
+.riesgo-card .r-ctrl{border-radius:8px;padding:10px 12px;font-size:12px;font-weight:600;line-height:1.5}
+
+/* DEF GRID */
+.def-visual{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:24px}
+.def-card{border-radius:12px;padding:16px;text-align:center}
+.def-ico{font-size:32px;margin-bottom:8px;display:block}
+.def-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;margin-bottom:6px}
+.def-text{font-size:11px;line-height:1.5}
+.def-ej{font-size:10px;font-style:italic;margin-top:5px;opacity:0.7}
+
+/* PELIGROS */
+.peligros-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.pel-card{border-radius:14px;padding:18px 16px;text-align:center;position:relative}
+.pel-ico{font-size:38px;margin-bottom:10px;display:block}
+.pel-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;margin-bottom:6px}
+.pel-text{font-size:12px;line-height:1.4}
+
+/* PROGRAMAS */
+.prog-visual{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.prog-card{border-radius:14px;padding:20px 16px;text-align:center;position:relative;overflow:hidden}
+.prog-card::after{content:'';position:absolute;bottom:-20px;right:-20px;width:70px;height:70px;border-radius:50%;opacity:0.1}
+.prog-ico{font-size:40px;margin-bottom:12px;display:block}
+.prog-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;margin-bottom:6px}
+.prog-text{font-size:12px;line-height:1.4}
+.prog-meta{display:inline-block;font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;margin-top:8px}
+
+/* RESP LIST */
+.resp-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px}
+.resp-card{border-radius:10px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start}
+.resp-n{font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;line-height:1;flex-shrink:0}
+.resp-text{font-size:13px;font-weight:600;line-height:1.4}
+
+/* RESIDUOS */
+.residuos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
+.res-card{border-radius:12px;padding:16px;text-align:center}
+.res-dot{width:20px;height:20px;border-radius:50%;margin:0 auto 10px}
+.res-ico{font-size:28px;margin-bottom:8px;display:block}
+.res-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;margin-bottom:5px}
+.res-text{font-size:11px;line-height:1.4}
+
+/* TABLA */
+.tabla{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;margin-bottom:20px;font-size:13px;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.tabla thead tr th{padding:12px 16px;text-align:left;font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;letter-spacing:0.5px;color:#fff}
+.tabla td{padding:10px 16px;border-bottom:1px solid rgba(0,0,0,0.06)}
+.tabla tr:last-child td{border:none}
+.tabla tr:nth-child(even) td{background:rgba(0,0,0,0.02)}
+.tabla td:last-child{font-weight:800}
+
+/* TIPS */
+.tip-box{border-radius:14px;padding:20px 24px;margin-bottom:20px;display:flex;gap:16px;align-items:flex-start}
+.tip-ico{font-size:28px;flex-shrink:0}
+.tip-content h4{font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;margin-bottom:5px}
+.tip-content p{font-size:13px;line-height:1.6}
+
+/* CIA CARDS */
+.cia-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+.cia-card{border-radius:16px;padding:24px 18px;text-align:center;position:relative;overflow:hidden}
+.cia-ico{font-size:44px;margin-bottom:12px;display:block}
+.cia-title{font-family:'Nunito',sans-serif;font-weight:900;font-size:16px;margin-bottom:8px}
+.cia-text{font-size:12px;line-height:1.5}
+
+/* POLICIES */
+.pol-grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.pol-card2{border-radius:14px;padding:20px;border-left:6px solid}
+.pol-card2 .pol-ico{font-size:28px;margin-bottom:10px;display:block}
+.pol-card2 h4{font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;margin-bottom:6px}
+.pol-card2 p{font-size:12px;line-height:1.5;color:#555}
+
+/* RECS */
+.recs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+.rec{border-radius:12px;padding:14px;text-align:center}
+.rec-ico{font-size:28px;margin-bottom:8px;display:block}
+.rec-text{font-size:11px;font-weight:700;line-height:1.4}
+
+/* CANALES */
+.canales{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.canal{border-radius:12px;padding:18px;text-align:center}
+.canal-ico{font-size:30px;margin-bottom:10px;display:block}
+.canal-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;display:block}
+.canal-val{font-size:12px;font-weight:700;word-break:break-all}
+
+/* STEPS VISUAL */
+.steps-visual{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:20px}
+.step-v{border-radius:12px;padding:16px;text-align:center;position:relative}
+.step-num{font-family:'Nunito',sans-serif;font-weight:900;font-size:32px;display:block;line-height:1;margin-bottom:6px}
+.step-ico{font-size:26px;margin-bottom:6px;display:block}
+.step-title{font-size:12px;font-weight:800;margin-bottom:4px}
+.step-desc{font-size:11px;line-height:1.4}
+
+/* MSG BOX */
+.msg-box{border-radius:16px;padding:24px 28px;margin-top:8px;margin-bottom:0;position:relative;overflow:hidden}
+.msg-box::before{font-size:80px;position:absolute;right:20px;top:50%;transform:translateY(-50%);opacity:0.08;line-height:1}
+.msg-box h4{font-family:'Nunito',sans-serif;font-weight:900;font-size:18px;margin-bottom:8px}
+.msg-box p{font-size:14px;line-height:1.7}
+
+/* DIVIDER */
+.divider{height:6px;margin:0}
+
+@media(max-width:640px){
+  .cover-content{padding:32px 24px}
+  .cover h1{font-size:38px}
+  .cover h1 em{font-size:32px}
+  .cover-bottom{padding:16px 24px}
+  .iso-section,.siplag-section{padding:32px 24px}
+  .greta-row,.iso-overview,.politica-grid,.lineas-grid,.proc-grid,.riesgos-row,.peligros-grid,.prog-visual,.resp-cards,.cia-row,.pol-grid2,.recs,.canales,.residuos{grid-template-columns:1fr 1fr}
+  .iso-header{flex-direction:column;gap:12px}
+  .iso-header h2{font-size:24px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ======== PORTADA ======== -->
+<div class="cover">
+  <div class="cover-stars"></div>
+  <div class="cover-circles"></div>
+  <div class="cover-circles2"></div>
+  <div class="cover-content">
+    <div class="cover-ungrd">
+      <span class="cover-ungrd-badge">UNGRD</span>
+      <span>Unidad Nacional para la Gestión del Riesgo de Desastres</span>
+    </div>
+    <h1>Cartilla SIPLAG<em>Grupo de Cooperación Internacional</em></h1>
+    <p class="cover-sub">Auditoría ISO 9001 · ISO 45001 · ISO 14001 · ISO 27001 · Vigencia 2026</p>
+    <div class="cover-pills">
+      <span class="cover-pill cp1">✅ ISO 9001 · Calidad</span>
+      <span class="cover-pill cp2">🦺 ISO 45001 · SST</span>
+      <span class="cover-pill cp3">🌿 ISO 14001 · Ambiental</span>
+      <span class="cover-pill cp4">🔒 ISO 27001 · Seg. Info</span>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="14" fill="#1A1035"/><text x="14" y="19" text-anchor="middle" fill="#FFC107" font-size="14" font-family="Nunito" font-weight="900">S</text></svg>
+    <p>Grupo de Cooperación Internacional · 2026</p>
+  </div>
+</div>
+
+<!-- ======== SIPLAG BASE ======== -->
+<div class="siplag-section" style="background:#fff">
+  <div class="section-tag">00 — Sistema Integrado</div>
+  <div class="section-title">¿Qué es el SIPLAG?</div>
+  <p class="section-sub">La herramienta que integra todas las normas ISO en una sola política institucional.</p>
+
+  <div class="siplag-def">
+    <p>Es la herramienta que facilita la <strong>planificación, administración y control</strong> para fortalecer los productos y servicios, mejorar la seguridad y salud de los colaboradores, <strong>proteger el medio ambiente</strong> y garantizar la disponibilidad, confidencialidad e integridad de la información.</p>
+  </div>
+
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#666">Los valores GRETA</div>
+  <div class="greta-row">
+    <div class="greta-item" style="background:#E8F0FB;border-color:#4A84E8">
+      <span class="greta-letter" style="color:#1B5EBF">G</span>
+      <span class="greta-word" style="color:#1B5EBF">Gestión</span>
+    </div>
+    <div class="greta-item" style="background:#E5F5ED;border-color:#36B67A">
+      <span class="greta-letter" style="color:#1A7A52">R</span>
+      <span class="greta-word" style="color:#1A7A52">Responsabilidad</span>
+    </div>
+    <div class="greta-item" style="background:#FEF0E0;border-color:#F0891A">
+      <span class="greta-letter" style="color:#B85A00">E</span>
+      <span class="greta-word" style="color:#B85A00">Excelencia</span>
+    </div>
+    <div class="greta-item" style="background:#F2EAFE;border-color:#9C59D1">
+      <span class="greta-letter" style="color:#6B2FA0">T</span>
+      <span class="greta-word" style="color:#6B2FA0">Trabajo equipo</span>
+    </div>
+    <div class="greta-item" style="background:#FFF8E0;border-color:#E8C200">
+      <span class="greta-letter" style="color:#9A7C00">A</span>
+      <span class="greta-word" style="color:#9A7C00">Articulación</span>
+    </div>
+  </div>
+
+  <div class="iso-overview">
+    <div class="iso-mini" style="background:#E8F0FB">
+      <span class="iso-ico">✅</span>
+      <span class="iso-num" style="color:#1B5EBF">ISO 9001:2015</span>
+      <h3 style="color:#1B5EBF">Calidad</h3>
+      <p style="color:#4A6FA5">Satisfacción de usuarios y trazabilidad</p>
+    </div>
+    <div class="iso-mini" style="background:#E5F5ED">
+      <span class="iso-ico">🦺</span>
+      <span class="iso-num" style="color:#1A7A52">ISO 45001:2018</span>
+      <h3 style="color:#1A7A52">SST</h3>
+      <p style="color:#2E8B57">Seguridad y salud en el trabajo</p>
+    </div>
+    <div class="iso-mini" style="background:#FEF0E0">
+      <span class="iso-ico">🌿</span>
+      <span class="iso-num" style="color:#B85A00">ISO 14001:2015</span>
+      <h3 style="color:#B85A00">Ambiental</h3>
+      <p style="color:#C47020">Proteger el medio ambiente</p>
+    </div>
+    <div class="iso-mini" style="background:#F2EAFE">
+      <span class="iso-ico">🔒</span>
+      <span class="iso-num" style="color:#6B2FA0">ISO 27001:2013</span>
+      <h3 style="color:#6B2FA0">Seg. Info</h3>
+      <p style="color:#8040B0">Confidencialidad e integridad</p>
+    </div>
+  </div>
+
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#666">Política Integrada · 8 compromisos</div>
+  <div class="politica-grid">
+    <div class="pol-item" style="background:#E8F0FB"><span class="pol-num" style="color:#1B5EBF">1</span><span class="pol-text">Satisfacer necesidades de los usuarios en productos y servicios misionales</span></div>
+    <div class="pol-item" style="background:#E5F5ED"><span class="pol-num" style="color:#1A7A52">2</span><span class="pol-text">Promover el cuidado de la salud individual y colectiva</span></div>
+    <div class="pol-item" style="background:#FEF0E0"><span class="pol-num" style="color:#B85A00">3</span><span class="pol-text">Implementar acciones de prevención en Seguridad Vial</span></div>
+    <div class="pol-item" style="background:#E5F5ED"><span class="pol-num" style="color:#1A7A52">4</span><span class="pol-text">Fomentar buenas prácticas para la prevención de impactos ambientales</span></div>
+    <div class="pol-item" style="background:#F2EAFE"><span class="pol-num" style="color:#6B2FA0">5</span><span class="pol-text">Asegurar confidencialidad, integridad y disponibilidad de la información</span></div>
+    <div class="pol-item" style="background:#FFF3CD"><span class="pol-num" style="color:#9A7C00">6</span><span class="pol-text">Cumplir los requisitos legales aplicables a la UNGRD</span></div>
+    <div class="pol-item" style="background:#F0F0F0"><span class="pol-num" style="color:#444">7</span><span class="pol-text">Promover la cultura institucional al cumplimiento del SIPLAG</span></div>
+    <div class="pol-item" style="background:#FFE8E8"><span class="pol-num" style="color:#B00020">8</span><span class="pol-text">Mejorar continuamente la calidad, seguridad, ambiente e información</span></div>
+  </div>
+</div>
+
+<div class="divider" style="background:linear-gradient(90deg,#1B5EBF,#4A84E8)"></div>
+
+<!-- ======== ISO 9001 ======== -->
+<div class="iso-section" style="background:#F0F5FF">
+  <div class="iso-header" style="background:linear-gradient(135deg,#1B5EBF,#2D7FE8)">
+    <span class="iso-header-ico">✅</span>
+    <div class="iso-header-content">
+      <span class="iso-badge" style="background:rgba(255,255,255,0.2);color:#fff">ISO 9001:2015</span>
+      <h2 style="color:#fff">Sistema de Gestión de Calidad</h2>
+      <p style="color:rgba(255,255,255,0.85)">Grupo de Cooperación Internacional · Todo lo que la auditoría espera ver documentado, medido y evidenciado.</p>
+    </div>
+  </div>
+
+  <div class="obj-box" style="background:#E8F0FB;border:2px solid #4A84E8">
+    <span class="obj-ico">🎯</span>
+    <div>
+      <h4 style="color:#1B5EBF">Objetivo</h4>
+      <p>Satisfacer las necesidades de los usuarios de la UNGRD: <strong>entes territoriales, entidades públicas y privadas, comunidades, ciudadanía y SNGRD.</strong></p>
+    </div>
+  </div>
+
+  <!-- CARACTERIZACIÓN DEL PROCESO -->
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;color:#1B5EBF">📄 Caracterización del Proceso · C-1602-CI-01 · Versión 06</div>
+
+  <!-- INFO BASICA -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px">
+    <div style="background:#1B5EBF;border-radius:12px;padding:16px;text-align:center">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;margin-bottom:6px">Código</div>
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#FFC107">C-1602-CI-01</div>
+    </div>
+    <div style="background:#1B5EBF;border-radius:12px;padding:16px;text-align:center">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;margin-bottom:6px">Versión</div>
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#FFC107">06 · 01/09/2022</div>
+    </div>
+    <div style="background:#1B5EBF;border-radius:12px;padding:16px;text-align:center">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;margin-bottom:6px">Tipo</div>
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#FFC107">DE APOYO</div>
+    </div>
+    <div style="background:#1B5EBF;border-radius:12px;padding:16px;text-align:center">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,0.6);text-transform:uppercase;margin-bottom:6px">Responsable</div>
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#FFC107">Coordinador GCI</div>
+    </div>
+  </div>
+
+  <!-- MAPA DE PROCESOS -->
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#1B5EBF">🗺️ Mapa de procesos UNGRD — Ubicación del GCI</div>
+  <div style="background:#1A1035;border-radius:16px;padding:24px;margin-bottom:20px;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(74,132,232,0.2),transparent 70%)"></div>
+
+    <!-- GESTIÓN GERENCIAL -->
+    <div style="text-align:center;margin-bottom:12px">
+      <div style="display:inline-block;background:#E8B84B;color:#1A1035;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;padding:8px 28px;border-radius:8px">🏛️ Gestión Gerencial</div>
+    </div>
+
+    <!-- ESTRATÉGICOS -->
+    <div style="background:rgba(27,94,191,0.25);border:2px solid rgba(74,132,232,0.4);border-radius:12px;padding:14px;margin-bottom:10px">
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:10px;letter-spacing:2px;color:#93C5FF;text-transform:uppercase;text-align:center;margin-bottom:10px">Procesos Estratégicos</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+        <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,0.75);font-weight:600">Planeación Estratégica</div>
+        <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,0.75);font-weight:600">Gestión TI</div>
+        <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,0.75);font-weight:600">Gestión Jurídica</div>
+        <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,0.75);font-weight:600">SIPLAG</div>
+        <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,0.75);font-weight:600">Comunicaciones</div>
+        <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,0.75);font-weight:600">Servicio al Ciudadano</div>
+      </div>
+    </div>
+
+    <!-- MISIONALES -->
+    <div style="background:rgba(26,122,82,0.2);border:2px solid rgba(54,182,122,0.4);border-radius:12px;padding:14px;margin-bottom:10px">
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:10px;letter-spacing:2px;color:#86EFAC;text-transform:uppercase;text-align:center;margin-bottom:10px">Procesos Misionales</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+        <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,0.75);font-weight:600">Gestión Conocimiento del Riesgo</div>
+        <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,0.75);font-weight:600">Gestión Reducción del Riesgo</div>
+        <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,0.75);font-weight:600">Gestión Manejo de Desastres</div>
+      </div>
+    </div>
+
+    <!-- APOYO — GCI DESTACADO -->
+    <div style="background:rgba(74,132,232,0.15);border:2px solid #4A84E8;border-radius:12px;padding:14px;margin-bottom:12px">
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:10px;letter-spacing:2px;color:#93C5FF;text-transform:uppercase;text-align:center;margin-bottom:10px">Procesos de Apoyo</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+        <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,0.6);font-weight:600">Gestión Administrativa</div>
+        <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,0.6);font-weight:600">Gestión Financiera</div>
+
+        <!-- GCI DESTACADO -->
+        <div style="background:linear-gradient(135deg,#1B5EBF,#4A84E8);border-radius:8px;padding:10px;text-align:center;border:2px solid #FFC107;box-shadow:0 0 0 3px rgba(255,193,7,0.2)">
+          <div style="font-size:14px;margin-bottom:2px">⭐</div>
+          <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;color:#FFC107;line-height:1.2">Gestión para Cooperación Internacional</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.8);margin-top:3px">← GCI (aquí estamos)</div>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,0.6);font-weight:600">Gestión Contratación</div>
+        <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,0.6);font-weight:600">Gestión Control Disciplinario</div>
+        <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:8px;text-align:center;font-size:11px;color:rgba(255,255,255,0.6);font-weight:600">Gestión Talento Humano</div>
+      </div>
+    </div>
+
+    <!-- EVALUACIÓN Y SEGUIMIENTO -->
+    <div style="text-align:center">
+      <div style="display:inline-block;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;padding:7px 24px;border-radius:8px">📋 Evaluación y Seguimiento</div>
+    </div>
+  </div>
+
+  <!-- NOTA ACLARATORIA -->
+  <div style="background:#E8F0FB;border-radius:12px;padding:14px 18px;margin-bottom:20px;display:flex;gap:12px;align-items:flex-start;border:2px solid #4A84E8">
+    <span style="font-size:24px;flex-shrink:0">📌</span>
+    <div>
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#1B5EBF;margin-bottom:4px">El GCI es un proceso DE APOYO</div>
+      <p style="font-size:13px;color:#334;line-height:1.5">El Grupo de Cooperación Internacional <strong>no ejecuta los procesos misionales directamente</strong>, sino que los <strong>apoya y fortalece</strong> gestionando recursos financieros, técnicos y humanos de cooperación internacional. Su acción es transversal: conecta a la UNGRD con cooperantes, organismos internacionales y mecanismos regionales para que los procesos misionales puedan cumplir su misión de reducción y manejo del riesgo de desastres.</p>
+    </div>
+  </div>
+
+  <!-- OBJETIVO Y ALCANCE -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+    <div style="background:#fff;border-radius:14px;padding:20px;border:2px solid #4A84E8;border-top:6px solid #1B5EBF">
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#1B5EBF;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">🎯 Objetivo del proceso</div>
+      <p style="font-size:13px;color:#333;line-height:1.6">Coordinar acciones de <strong>diplomacia humanitaria</strong> con el Ministerio de Relaciones Exteriores y gestionar con <strong>APC-Colombia</strong> recursos financieros, físicos, humanos y técnicos de Cooperación Internacional para el fortalecimiento del SNGRD.</p>
+    </div>
+    <div style="background:#fff;border-radius:14px;padding:20px;border:2px solid #4A84E8;border-top:6px solid #4A84E8">
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#1B5EBF;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">🔭 Alcance</div>
+      <p style="font-size:13px;color:#333;line-height:1.6">Desde la <strong>identificación de necesidades</strong> de cooperación, hasta la participación en mecanismos regionales e internacionales, intercambio de experiencias y coordinación ante un <strong>llamamiento internacional</strong>.</p>
+    </div>
+  </div>
+
+  <!-- CICLO PHVA -->
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#1B5EBF">🔄 Ciclo PHVA del proceso</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px">
+
+    <!-- PLANEAR -->
+    <div style="border-radius:14px;overflow:hidden;border:2px solid #1B5EBF">
+      <div style="background:#1B5EBF;padding:10px 14px;text-align:center">
+        <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;color:#FFC107">P</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.8);font-weight:700;letter-spacing:1px">PLANEAR</div>
+      </div>
+      <div style="background:#fff;padding:12px 14px">
+        <div style="font-size:11px;font-weight:700;color:#1B5EBF;margin-bottom:4px">📥 Entradas</div>
+        <div style="font-size:11px;color:#555;margin-bottom:8px">PND · Marco Sendai · Ley 1523 · Solicitudes SNGRD</div>
+        <div style="font-size:11px;font-weight:700;color:#1A7A52;margin-bottom:4px">📤 Salida</div>
+        <div style="font-size:11px;color:#555">Plan Estratégico de Cooperación Internacional</div>
+      </div>
+    </div>
+
+    <!-- HACER -->
+    <div style="border-radius:14px;overflow:hidden;border:2px solid #4A84E8">
+      <div style="background:#4A84E8;padding:10px 14px;text-align:center">
+        <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;color:#fff">H</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.8);font-weight:700;letter-spacing:1px">HACER</div>
+      </div>
+      <div style="background:#fff;padding:12px 14px">
+        <div style="font-size:11px;font-weight:700;color:#4A84E8;margin-bottom:4px">🔧 Actividades</div>
+        <ul style="list-style:none;font-size:11px;color:#555;padding:0">
+          <li style="padding:2px 0;border-bottom:1px dashed #eee">→ Gestionar recursos CI</li>
+          <li style="padding:2px 0;border-bottom:1px dashed #eee">→ Determinar alcance cooperación</li>
+          <li style="padding:2px 0;border-bottom:1px dashed #eee">→ Elaborar Plan de Acción</li>
+          <li style="padding:2px 0;border-bottom:1px dashed #eee">→ Apoyar mecanismos regionales</li>
+          <li style="padding:2px 0">→ Participar en eventos nacionales e internacionales</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- VERIFICAR -->
+    <div style="border-radius:14px;overflow:hidden;border:2px solid #1A7A52">
+      <div style="background:#1A7A52;padding:10px 14px;text-align:center">
+        <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;color:#fff">V</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.8);font-weight:700;letter-spacing:1px">VERIFICAR</div>
+      </div>
+      <div style="background:#fff;padding:12px 14px">
+        <div style="font-size:11px;font-weight:700;color:#1A7A52;margin-bottom:4px">✅ Actividades</div>
+        <ul style="list-style:none;font-size:11px;color:#555;padding:0">
+          <li style="padding:2px 0;border-bottom:1px dashed #eee">→ Evaluar Plan de Acción</li>
+          <li style="padding:2px 0;border-bottom:1px dashed #eee">→ Realimentar resultados</li>
+          <li style="padding:2px 0;border-bottom:1px dashed #eee">→ Seguimiento a eventos</li>
+          <li style="padding:2px 0">→ Evaluar desempeño del proceso</li>
+        </ul>
+        <div style="font-size:11px;font-weight:700;color:#1A7A52;margin-top:6px;margin-bottom:2px">📤 Salidas</div>
+        <div style="font-size:11px;color:#555">Informes seguimiento, balance de resultados, planes de mejoramiento</div>
+      </div>
+    </div>
+
+    <!-- ACTUAR -->
+    <div style="border-radius:14px;overflow:hidden;border:2px solid #B85A00">
+      <div style="background:#B85A00;padding:10px 14px;text-align:center">
+        <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;color:#fff">A</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.8);font-weight:700;letter-spacing:1px">ACTUAR</div>
+      </div>
+      <div style="background:#fff;padding:12px 14px">
+        <div style="font-size:11px;font-weight:700;color:#B85A00;margin-bottom:4px">📥 Entrada</div>
+        <div style="font-size:11px;color:#555;margin-bottom:8px">Planes de mejoramiento del proceso</div>
+        <div style="font-size:11px;font-weight:700;color:#B85A00;margin-bottom:4px">⚙️ Actividad</div>
+        <div style="font-size:11px;color:#555;margin-bottom:8px">Implementar acciones correctivas y de mejora</div>
+        <div style="font-size:11px;font-weight:700;color:#B85A00;margin-bottom:2px">📤 Salida</div>
+        <div style="font-size:11px;color:#555">Acciones correctivas implementadas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROVEEDORES Y CLIENTES -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px">
+    <div style="background:#fff;border-radius:14px;padding:18px;border:2px solid #E8F0FB">
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#1B5EBF;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">🏭 Proveedores clave</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="background:#E8F0FB;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;color:#1B5EBF">🏛️ Presidencia de la República</div>
+        <div style="background:#E8F0FB;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;color:#1B5EBF">📊 DNP · Dep. Nacional de Planeación</div>
+        <div style="background:#E8F0FB;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;color:#1B5EBF">🌐 APC-Colombia</div>
+        <div style="background:#E8F0FB;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;color:#1B5EBF">🤝 Cancillería / Min. Rel. Exteriores</div>
+        <div style="background:#E8F0FB;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;color:#1B5EBF">🔬 Gestión Conocimiento del Riesgo</div>
+        <div style="background:#E8F0FB;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;color:#1B5EBF">🛡️ Gestión Reducción del Riesgo</div>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:14px;padding:18px;border:2px solid #E5F5ED">
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#1A7A52;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">👥 Clientes / Beneficiarios</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;color:#1A7A52">🏗️ Gestión Conocimiento del Riesgo</div>
+        <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;color:#1A7A52">🛡️ Gestión Reducción del Riesgo</div>
+        <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;color:#1A7A52">🚨 Gestión Manejo de Desastres</div>
+        <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;color:#1A7A52">🏢 Entidades del SNGRD</div>
+        <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;color:#1A7A52">🌍 Autoridades locales y cooperantes</div>
+        <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;color:#1A7A52">🔍 Entes certificadores y de control</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="items-title" style="color:#1B5EBF"><span style="background:#1B5EBF" class="items-title::before"></span>📋 5 Líneas de trabajo del GCI</div>
+  <div class="lineas-grid">
+    <div class="linea-card" style="background:#fff;border:2px solid #E8F0FB">
+      <span class="linea-num" style="color:#4A84E8">01</span>
+      <div class="linea-content">
+        <h4>Seguimiento PECI</h4>
+        <p>Plan Estratégico de Cooperación Internacional, articulado con APC-Colombia y Cancillería.</p>
+        <span class="linea-meta" style="background:#E8F0FB;color:#1B5EBF">Meta: 1 doc · 4° bimestre</span>
+      </div>
+    </div>
+    <div class="linea-card" style="background:#fff;border:2px solid #E8F0FB">
+      <span class="linea-num" style="color:#4A84E8">02</span>
+      <div class="linea-content">
+        <h4>Insumos técnicos bilaterales</h4>
+        <p>Convenios, planes de trabajo, actas e informes de cooperación bilateral y Sur-Sur.</p>
+        <span class="linea-meta" style="background:#E8F0FB;color:#1B5EBF">Meta: 6 docs bimestrales</span>
+      </div>
+    </div>
+    <div class="linea-card" style="background:#fff;border:2px solid #E8F0FB">
+      <span class="linea-num" style="color:#4A84E8">03</span>
+      <div class="linea-content">
+        <h4>Instancias multilaterales</h4>
+        <p>Incidencia en GRD, cambio climático y derechos humanos a nivel global.</p>
+        <span class="linea-meta" style="background:#E8F0FB;color:#1B5EBF">Meta: 6 docs bimestrales</span>
+      </div>
+    </div>
+    <div class="linea-card" style="background:#fff;border:2px solid #E8F0FB">
+      <span class="linea-num" style="color:#4A84E8">04</span>
+      <div class="linea-content">
+        <h4>Diálogo regional</h4>
+        <p>CAN, CAPRADE, OTCA, Consenso de Brasilia y espacios de integración.</p>
+        <span class="linea-meta" style="background:#E8F0FB;color:#1B5EBF">Meta: 2 docs</span>
+      </div>
+    </div>
+    <div class="linea-card" style="background:#fff;border:2px solid #E8F0FB">
+      <span class="linea-num" style="color:#4A84E8">05</span>
+      <div class="linea-content">
+        <h4>Línea humanitaria</h4>
+        <p>Respuesta a emergencias, IDRL, USAR, OCHA, PMA, BID y actores humanitarios.</p>
+        <span class="linea-meta" style="background:#E8F0FB;color:#1B5EBF">Meta: 6 docs bimestrales</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDICADOR -->
+  <div class="ind-visual">
+    <div class="ind-top" style="background:#1B5EBF">
+      <h3>📊 Indicador 01 · Avance Plan de Acción Cooperación Internacional</h3>
+      <span class="ind-badge">EFICACIA</span>
+    </div>
+    <div class="ind-body">
+      <div class="ind-row"><span class="k">Fórmula</span><span class="v">Promedio % de cumplimiento de metas bimestrales del Plan de Acción</span></div>
+      <div class="ind-row"><span class="k">Periodo</span><span class="v">Bimestral · Procesos internos</span></div>
+      <div class="ind-row"><span class="k">Resultado 2026</span><span class="v" style="color:#1A7A52;font-size:15px">✅ 100% febrero · ✅ 100% abril</span></div>
+    </div>
+    <div class="metas-bar">
+      <div class="meta-b" style="background:#FFE8E8"><span class="mn" style="color:#B00020">70%</span>🔴 Alerta</div>
+      <div class="meta-b" style="background:#FFF3CD"><span class="mn" style="color:#9A7C00">80%</span>🟡 Medio</div>
+      <div class="meta-b" style="background:#E5F5ED"><span class="mn" style="color:#1A7A52">90%</span>🟢 Meta</div>
+      <div class="meta-b" style="background:#1B5EBF"><span class="mn" style="color:#FFC107">100%</span><span style="color:#fff">⭐ Actual</span></div>
+    </div>
+  </div>
+
+  <!-- PROCEDIMIENTOS -->
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#1B5EBF">📁 Procedimientos GCI · Todos publicados en NeoGestión ✅</div>
+  <div class="proc-grid">
+    <div class="proc-card" style="background:#fff;border:1.5px solid #E8F0FB">
+      <div class="proc-check" style="background:#E8F0FB;color:#1B5EBF">✓</div>
+      <div class="proc-info"><div class="proc-code" style="color:#4A84E8">PR-1602-CI-11</div><div class="proc-name">Donaciones internacionales en especie fuera de emergencia</div></div>
+    </div>
+    <div class="proc-card" style="background:#fff;border:1.5px solid #E8F0FB">
+      <div class="proc-check" style="background:#E8F0FB;color:#1B5EBF">✓</div>
+      <div class="proc-info"><div class="proc-code" style="color:#4A84E8">PR-1602-CI-09</div><div class="proc-name">Donaciones en especie en emergencia</div></div>
+    </div>
+    <div class="proc-card" style="background:#fff;border:1.5px solid #E8F0FB">
+      <div class="proc-check" style="background:#E8F0FB;color:#1B5EBF">✓</div>
+      <div class="proc-info"><div class="proc-code" style="color:#4A84E8">PR-1602-CI-10</div><div class="proc-name">Donaciones en efectivo</div></div>
+    </div>
+    <div class="proc-card" style="background:#fff;border:1.5px solid #E8F0FB">
+      <div class="proc-check" style="background:#E8F0FB;color:#1B5EBF">✓</div>
+      <div class="proc-info"><div class="proc-code" style="color:#4A84E8">PR-1602-CI-03</div><div class="proc-name">Gestión de recursos por convenios</div></div>
+    </div>
+    <div class="proc-card" style="background:#fff;border:1.5px solid #E8F0FB">
+      <div class="proc-check" style="background:#E8F0FB;color:#1B5EBF">✓</div>
+      <div class="proc-info"><div class="proc-code" style="color:#4A84E8">PR-1602-CI-08</div><div class="proc-name">CUC</div></div>
+    </div>
+    <div class="proc-card" style="background:#fff;border:1.5px solid #E8F0FB">
+      <div class="proc-check" style="background:#E8F0FB;color:#1B5EBF">✓</div>
+      <div class="proc-info"><div class="proc-code" style="color:#4A84E8">PR-1602-CI-07</div><div class="proc-name">Asistencia humanitaria al exterior</div></div>
+    </div>
+    <div class="proc-card" style="background:#fff;border:1.5px solid #E8F0FB">
+      <div class="proc-check" style="background:#E8F0FB;color:#1B5EBF">✓</div>
+      <div class="proc-info"><div class="proc-code" style="color:#4A84E8">PR-1602-CI-04</div><div class="proc-name">Intercambio de experiencias — Oferta</div></div>
+    </div>
+    <div class="proc-card" style="background:#fff;border:1.5px solid #E8F0FB">
+      <div class="proc-check" style="background:#E8F0FB;color:#1B5EBF">✓</div>
+      <div class="proc-info"><div class="proc-code" style="color:#4A84E8">PR-1602-CI-12</div><div class="proc-name">Intercambio de experiencias — Demanda</div></div>
+    </div>
+  </div>
+
+  <!-- RIESGOS -->
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#1B5EBF">⚠️ Matriz de Riesgos GCI</div>
+  <div class="riesgos-row">
+    <div class="riesgo-card" style="background:#FFF0F0">
+      <span class="nivel-badge" style="background:#FFD0D0;color:#B00020">🔴 ALTO</span>
+      <h4 style="color:#7A0015">Pérdida de credibilidad ante cooperantes</h4>
+      <p class="r-desc" style="color:#8B3030">Compromisos sin priorización o sin alineación institucional.</p>
+      <div class="r-ctrl" style="background:rgba(176,0,32,0.08);color:#7A0015">🛡️ <strong>Control:</strong> Articulación con PECI, PND, Cancillería y APC.</div>
+    </div>
+    <div class="riesgo-card" style="background:#FFF5E8">
+      <span class="nivel-badge" style="background:#FFE0B0;color:#8B4A00">🟠 MODERADO</span>
+      <h4 style="color:#7A3A00">Retrasos en donaciones internacionales</h4>
+      <p class="r-desc" style="color:#8B5020">Desconocimiento de requisitos normativos o rutas de legalización.</p>
+      <div class="r-ctrl" style="background:rgba(184,90,0,0.08);color:#7A3A00">🛡️ <strong>Control:</strong> Procedimientos de donaciones. Reuniones con GAA, SMD, Contractual.</div>
+    </div>
+    <div class="riesgo-card" style="background:#FEFDE8">
+      <span class="nivel-badge" style="background:#FFF3A0;color:#7A6800">🟡 BAJO</span>
+      <h4 style="color:#5A5000">Pérdida de trazabilidad documental</h4>
+      <p class="r-desc" style="color:#6B6000">Información de cooperación no registrada o controlada.</p>
+      <div class="r-ctrl" style="background:rgba(200,162,0,0.08);color:#5A5000">🛡️ <strong>Control:</strong> Gestión documental, carpeta compartida y ayudas de memoria.</div>
+    </div>
+  </div>
+
+  <div class="msg-box" style="background:linear-gradient(135deg,#1B5EBF,#2D7FE8)">
+    <h4 style="color:#FFC107">💡 Mensaje clave para la auditoría</h4>
+    <p style="color:rgba(255,255,255,0.9)">No se trata de mostrar <em>muchos</em> archivos — es <strong>explicar cómo se conectan</strong>: el plan define lo que se hace · el indicador mide el avance · los informes evidencian · los procedimientos ordenan · la matriz muestra los controles.</p>
+  </div>
+</div>
+
+<div class="divider" style="background:linear-gradient(90deg,#1A7A52,#36B67A)"></div>
+
+<!-- ======== ISO 45001 SST ======== -->
+<div class="iso-section" style="background:#F0FBF4">
+  <div class="iso-header" style="background:linear-gradient(135deg,#1A7A52,#28A06A)">
+    <span class="iso-header-ico">🦺</span>
+    <div class="iso-header-content">
+      <span class="iso-badge" style="background:rgba(255,255,255,0.2);color:#fff">ISO 45001:2018</span>
+      <h2 style="color:#fff">Seguridad y Salud en el Trabajo</h2>
+      <p style="color:rgba(255,255,255,0.85)">Reducir riesgos y garantizar el bienestar de todos los colaboradores y contratistas de la UNGRD.</p>
+    </div>
+  </div>
+
+  <div class="obj-box" style="background:#E5F5ED;border:2px solid #36B67A">
+    <span class="obj-ico">🎯</span>
+    <div>
+      <h4 style="color:#1A7A52">Objetivo</h4>
+      <p>Garantizar que los <strong>riesgos, enfermedades y accidentes</strong> derivados del trabajo se reduzcan al mínimo y gestionar buenas condiciones SST para todos.</p>
+    </div>
+  </div>
+
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#1A7A52">📚 Definiciones clave SST</div>
+  <div class="def-visual">
+    <div class="def-card" style="background:#FFF9E0">
+      <span class="def-ico">⚡</span>
+      <div class="def-title" style="color:#9A6800">Acto inseguro</div>
+      <div class="def-text">Acción humana que puede causar un incidente</div>
+      <div class="def-ej">Ej: No usar EPP · Piso mojado</div>
+    </div>
+    <div class="def-card" style="background:#FFF0E0">
+      <span class="def-ico">🏗️</span>
+      <div class="def-title" style="color:#8B4A00">Condición insegura</div>
+      <div class="def-text">Equipo o instalación que representa peligro</div>
+      <div class="def-ej">Ej: Escaleras sin barandas</div>
+    </div>
+    <div class="def-card" style="background:#E8F0FB">
+      <span class="def-ico">🔔</span>
+      <div class="def-title" style="color:#1B5EBF">Incidente laboral</div>
+      <div class="def-text">Suceso no deseado que por azar no generó lesiones</div>
+      <div class="def-ej">Ej: Casi me caigo</div>
+    </div>
+    <div class="def-card" style="background:#FFE8E8">
+      <span class="def-ico">🚨</span>
+      <div class="def-title" style="color:#B00020">Accidente laboral</div>
+      <div class="def-text">Suceso que produce lesión, invalidez o muerte</div>
+    </div>
+    <div class="def-card" style="background:#F2EAFE">
+      <span class="def-ico">🏥</span>
+      <div class="def-title" style="color:#6B2FA0">Enfermedad laboral</div>
+      <div class="def-text">Contraída por exposición a riesgos del trabajo</div>
+      <div class="def-ej">Ej: Túnel del Carpo</div>
+    </div>
+  </div>
+
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#1A7A52">🚧 Peligros en la UNGRD</div>
+  <div class="peligros-grid">
+    <div class="pel-card" style="background:#E5F5ED;border:2px solid #36B67A">
+      <span class="pel-ico">🦠</span>
+      <div class="pel-title" style="color:#1A7A52">Biológico</div>
+      <p class="pel-text" style="color:#2E7A52">COVID-19 · En terreno: picaduras o mordeduras de animales</p>
+    </div>
+    <div class="pel-card" style="background:#FEF0E0;border:2px solid #F0891A">
+      <span class="pel-ico">⚗️</span>
+      <div class="pel-title" style="color:#B85A00">Químico</div>
+      <p class="pel-text" style="color:#8B4000">Alcohol, gel antibacterial y productos sin rotular</p>
+    </div>
+    <div class="pel-card" style="background:#FFF9E0;border:2px solid #E8C200">
+      <span class="pel-ico">🌡️</span>
+      <div class="pel-title" style="color:#9A7C00">Físico</div>
+      <p class="pel-text" style="color:#7A6000">Temperaturas extremas, ruido y radiaciones solares</p>
+    </div>
+    <div class="pel-card" style="background:#E8F0FB;border:2px solid #4A84E8">
+      <span class="pel-ico">🪑</span>
+      <div class="pel-title" style="color:#1B5EBF">Biomecánico</div>
+      <p class="pel-text" style="color:#2A5099">Malas posturas, movimientos repetitivos y puestos inadecuados</p>
+    </div>
+    <div class="pel-card" style="background:#F2EAFE;border:2px solid #9C59D1">
+      <span class="pel-ico">🧠</span>
+      <div class="pel-title" style="color:#6B2FA0">Psicológico</div>
+      <p class="pel-text" style="color:#5A2090">Carga laboral, estrés y mal ambiente de trabajo</p>
+    </div>
+    <div class="pel-card" style="background:#FFE8E8;border:2px solid #E85050">
+      <span class="pel-ico">🌊</span>
+      <div class="pel-title" style="color:#B00020">Fenómenos naturales</div>
+      <p class="pel-text" style="color:#900020">Sismos, lluvias fuertes y deslizamientos de tierra</p>
+    </div>
+  </div>
+
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#1A7A52">🔴 Cómo reportar — Procedimientos</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px">
+    <div style="background:#fff;border-radius:14px;padding:18px;border:2px solid #E5F5ED">
+      <div style="font-size:24px;margin-bottom:8px">📋</div>
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#1A7A52;margin-bottom:8px">Tarjeta ICAI y STOP</div>
+      <ul style="list-style:none;font-size:12px;color:#444">
+        <li style="padding:3px 0;border-bottom:1px dashed #eee">→ Mi Unidad Virtual</li>
+        <li style="padding:3px 0;border-bottom:1px dashed #eee">→ Nuestro SIPLAG</li>
+        <li style="padding:3px 0">→ Reporte ICAI y STOP</li>
+      </ul>
+    </div>
+    <div style="background:#fff;border-radius:14px;padding:18px;border:2px solid #FFE0E0">
+      <div style="font-size:24px;margin-bottom:8px">🚑</div>
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#B00020;margin-bottom:8px">Accidente de trabajo</div>
+      <ul style="list-style:none;font-size:12px;color:#444">
+        <li style="padding:3px 0;border-bottom:1px dashed #eee">→ Brigadista · primeros auxilios</li>
+        <li style="padding:3px 0;border-bottom:1px dashed #eee">→ Formato FR-1601-GTH-144</li>
+        <li style="padding:3px 0">→ SST reporta a ARL o EPS</li>
+      </ul>
+    </div>
+    <div style="background:#fff;border-radius:14px;padding:18px;border:2px solid #FEE0C0">
+      <div style="font-size:24px;margin-bottom:8px">🏥</div>
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#B85A00;margin-bottom:8px">Enfermedad laboral</div>
+      <ul style="list-style:none;font-size:12px;color:#444">
+        <li style="padding:3px 0;border-bottom:1px dashed #eee">→ EPS · reporte médico</li>
+        <li style="padding:3px 0;border-bottom:1px dashed #eee">→ Remitir a SST por correo</li>
+        <li style="padding:3px 0">→ SST reporta por FUREL</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#1A7A52">✈️ Salida a terreno · Pasos obligatorios</div>
+  <div class="steps-visual">
+    <div class="step-v" style="background:#E5F5ED;border:2px solid #36B67A"><span class="step-num" style="color:#1A7A52">1</span><span class="step-ico">📋</span><div class="step-title">Reporte CITEL</div><div class="step-desc" style="color:#2E7A52">Antes del viaje</div></div>
+    <div class="step-v" style="background:#E5F5ED;border:2px solid #36B67A"><span class="step-num" style="color:#1A7A52">2</span><span class="step-ico">🏥</span><div class="step-title">Verificar ARL</div><div class="step-desc" style="color:#2E7A52">Positiva · nivel de riesgo</div></div>
+    <div class="step-v" style="background:#E5F5ED;border:2px solid #36B67A"><span class="step-num" style="color:#1A7A52">3</span><span class="step-ico">📞</span><div class="step-title">Notificar incidentes</div><div class="step-desc" style="color:#2E7A52">CITEL y SST inmediatamente</div></div>
+    <div class="step-v" style="background:#E5F5ED;border:2px solid #36B67A"><span class="step-num" style="color:#1A7A52">4</span><span class="step-ico">⚠️</span><div class="step-title">Zonas de riesgo</div><div class="step-desc" style="color:#2E7A52">Reportarse con Coordinador Depto.</div></div>
+    <div class="step-v" style="background:#E5F5ED;border:2px solid #36B67A"><span class="step-num" style="color:#1A7A52">5</span><span class="step-ico">🦺</span><div class="step-title">Usar EPP</div><div class="step-desc" style="color:#2E7A52">Siempre según la actividad</div></div>
+  </div>
+
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#1A7A52">📈 Programas de gestión SST</div>
+  <div class="prog-visual">
+    <div class="prog-card" style="background:#E5F5ED;border:2px solid #36B67A"><span class="prog-ico">🛡️</span><div class="prog-title" style="color:#1A7A52">Protección Individual</div><p class="prog-text" style="color:#2E7A52">Identificación de peligros y actividades de control</p></div>
+    <div class="prog-card" style="background:#E5F5ED;border:2px solid #36B67A"><span class="prog-ico">🌱</span><div class="prog-title" style="color:#1A7A52">Entornos Saludables</div><p class="prog-text" style="color:#2E7A52">Pausas activas, jornadas de salud y bienestar</p></div>
+    <div class="prog-card" style="background:#FFE8E8;border:2px solid #E85050"><span class="prog-ico">❤️</span><div class="prog-title" style="color:#B00020">PVE Cardiovascular</div><p class="prog-text" style="color:#8B1530">Vigilancia epidemiológica cardiovascular</p></div>
+    <div class="prog-card" style="background:#F2EAFE;border:2px solid #9C59D1"><span class="prog-ico">🧠</span><div class="prog-title" style="color:#6B2FA0">PVE Psicosocial</div><p class="prog-text" style="color:#5A2090">Atención psicológica y vigilancia</p></div>
+    <div class="prog-card" style="background:#E8F0FB;border:2px solid #4A84E8"><span class="prog-ico">💪</span><div class="prog-title" style="color:#1B5EBF">PVE Músculo-Esq.</div><p class="prog-text" style="color:#2A5099">Inspección de puestos de trabajo</p></div>
+    <div class="prog-card" style="background:#FFF9E0;border:2px solid #E8C200"><span class="prog-ico">👁️</span><div class="prog-title" style="color:#9A7C00">PVE Visual</div><p class="prog-text" style="color:#7A6000">Vigilancia de la salud visual</p></div>
+  </div>
+</div>
+
+<div class="divider" style="background:linear-gradient(90deg,#B85A00,#F0891A)"></div>
+
+<!-- ======== ISO 14001 AMBIENTAL ======== -->
+<div class="iso-section" style="background:#FFF8F0">
+  <div class="iso-header" style="background:linear-gradient(135deg,#B85A00,#D4780A)">
+    <span class="iso-header-ico">🌿</span>
+    <div class="iso-header-content">
+      <span class="iso-badge" style="background:rgba(255,255,255,0.2);color:#fff">ISO 14001:2015</span>
+      <h2 style="color:#fff">Gestión Ambiental · ECOSIPLAG</h2>
+      <p style="color:rgba(255,255,255,0.85)">Proteger el medio ambiente y minimizar los impactos de las actividades de la UNGRD.</p>
+    </div>
+  </div>
+
+  <div class="obj-box" style="background:#FEF0E0;border:2px solid #F0891A">
+    <span class="obj-ico">🎯</span>
+    <div>
+      <h4 style="color:#B85A00">Objetivo</h4>
+      <p>Mejorar y fortalecer la gestión ambiental interna, de modo que las acciones implementadas <strong>protejan el medio ambiente y minimicen los impactos</strong> derivados de las actividades de la UNGRD.</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px">
+    <div style="background:#fff;border-radius:14px;padding:20px;border:2px solid #E5F5ED">
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#1A7A52;margin-bottom:12px">⚙️ Aspectos Ambientales — CAUSA</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:700;color:#1A7A52">💧 Consumo de agua</div>
+        <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:700;color:#1A7A52">⚡ Consumo de energía</div>
+        <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:700;color:#1A7A52">💨 Generación de emisiones</div>
+        <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:700;color:#1A7A52">⛽ Consumo de combustibles</div>
+        <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:700;color:#1A7A52">📄 Consumo de papel</div>
+        <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:700;color:#1A7A52">🧪 Consumo de productos químicos</div>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:14px;padding:20px;border:2px solid #FFE0C0">
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:#B85A00;margin-bottom:12px">💥 Impactos Ambientales — EFECTO</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="background:#FEF0E0;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:700;color:#B85A00">👥 Impacto social</div>
+        <div style="background:#FEF0E0;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:700;color:#B85A00">🗑️ Generación de residuos</div>
+        <div style="background:#FEF0E0;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:700;color:#B85A00">💨 Alteración del aire</div>
+        <div style="background:#FEF0E0;border-radius:8px;padding:8px 12px;font-size:13px;font-weight:700;color:#B85A00">🌍 Contaminación de suelo</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#B85A00">🗑️ Clasificación de residuos — Puntos ecológicos</div>
+  <div class="residuos">
+    <div class="res-card" style="background:#E5F5ED;border:2px solid #36B67A">
+      <span class="res-ico">♻️</span>
+      <div class="res-title" style="color:#1A7A52">🟢 Aprovechables</div>
+      <p class="res-text" style="color:#2E7A52">Plástico, vidrio, metales, papel y cartón</p>
+    </div>
+    <div class="res-card" style="background:#F0F0F0;border:2px solid #888">
+      <span class="res-ico">🗑️</span>
+      <div class="res-title" style="color:#444">⚫ No aprovechables</div>
+      <p class="res-text" style="color:#555">Papel higiénico, servilletas, papeles contaminados con comida</p>
+    </div>
+    <div class="res-card" style="background:#FFF3E0;border:2px solid #A0601A">
+      <span class="res-ico">🍂</span>
+      <div class="res-title" style="color:#7A4010">🟤 Orgánicos</div>
+      <p class="res-text" style="color:#8B5020">Restos de comida, desechos agrícolas</p>
+    </div>
+    <div class="res-card" style="background:#FFE8E8;border:2px solid #E85050">
+      <span class="res-ico">☣️</span>
+      <div class="res-title" style="color:#B00020">🔴 RESPEL</div>
+      <p class="res-text" style="color:#8B1530">Almacenamiento &lt;12 meses. Gestor autorizado.</p>
+    </div>
+  </div>
+
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#B85A00">🌱 6 Programas de control ambiental</div>
+  <div class="prog-visual">
+    <div class="prog-card" style="background:#E5F5ED;border:2px solid #36B67A"><span class="prog-ico">♻️</span><div class="prog-title" style="color:#1A7A52">Gestión de Residuos</div><p class="prog-text" style="color:#2E7A52">Clasificación, RESPEL y gestores autorizados</p></div>
+    <div class="prog-card" style="background:#E8F4FF;border:2px solid #4A8FE8"><span class="prog-ico">💧</span><div class="prog-title" style="color:#1B4EA0">Ahorro de Agua</div><p class="prog-text" style="color:#2A5099">Uso adecuado de grifos</p><span class="prog-meta" style="background:#E8F0FB;color:#1B5EBF">Meta: -3%</span></div>
+    <div class="prog-card" style="background:#FFF9E0;border:2px solid #E8C200"><span class="prog-ico">⚡</span><div class="prog-title" style="color:#9A7C00">Ahorro de Energía</div><p class="prog-text" style="color:#7A6000">Apagar pantallas y luces</p><span class="prog-meta" style="background:#FFF9E0;color:#9A7C00">Meta: -1%</span></div>
+    <div class="prog-card" style="background:#FEF0E0;border:2px solid #F0891A"><span class="prog-ico">📄</span><div class="prog-title" style="color:#B85A00">Cero Papel</div><p class="prog-text" style="color:#8B4000">Gestión documental digital</p><span class="prog-meta" style="background:#FEF0E0;color:#B85A00">Meta: -1.5%</span></div>
+    <div class="prog-card" style="background:#F5F5F5;border:2px solid #888"><span class="prog-ico">🧹</span><div class="prog-title" style="color:#444">Orden y Aseo</div><p class="prog-text" style="color:#555">Campañas e inspecciones periódicas</p></div>
+    <div class="prog-card" style="background:#FFE8E8;border:2px solid #E85050"><span class="prog-ico">🔍</span><div class="prog-title" style="color:#B00020">Inspecciones</div><p class="prog-text" style="color:#900020">EPP, extintores, botiquín, Kit de derrame</p></div>
+  </div>
+
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#B85A00">📊 Matriz de Aspectos e Impactos Ambientales — GCI · FR-1300-SIPG-01</div>
+
+  <!-- 6 ASPECTOS DE LA MATRIZ REAL -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+
+    <div style="background:#fff;border-radius:14px;padding:18px;border:2px solid #E5F5ED;border-top:5px solid #1A7A52">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span style="font-size:28px">📄</span>
+        <div>
+          <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#1A7A52">Consumo de papel</div>
+          <div style="font-size:10px;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Elaboración y gestión documental</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#555;margin-bottom:8px">Uso de hojas y material impreso para elaboración, revisión y archivo de documentos.</div>
+      <div style="background:#FFF9E0;border-radius:8px;padding:8px 12px;font-size:11px;color:#9A6800;font-weight:700;margin-bottom:6px">⚠️ Impacto: Generación de residuos sólidos · Significancia: Baja</div>
+      <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:11px;color:#1A7A52;font-weight:600">🛡️ Control: Priorizar documentos digitales, imprimir solo cuando sea necesario y promover reciclaje de papel.</div>
+    </div>
+
+    <div style="background:#fff;border-radius:14px;padding:18px;border:2px solid #E8F0FB;border-top:5px solid #1B5EBF">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span style="font-size:28px">💻</span>
+        <div>
+          <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#1B5EBF">Consumo energético — Reuniones virtuales</div>
+          <div style="font-size:10px;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Coordinación virtual e internacional</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#555;margin-bottom:8px">Consumo de energía derivado del uso de computadores, pantallas y plataformas virtuales.</div>
+      <div style="background:#FFF9E0;border-radius:8px;padding:8px 12px;font-size:11px;color:#9A6800;font-weight:700;margin-bottom:6px">⚠️ Impacto: Consumo de recursos energéticos · Significancia: Baja</div>
+      <div style="background:#E8F0FB;border-radius:8px;padding:8px 12px;font-size:11px;color:#1B5EBF;font-weight:600">🛡️ Control: Apagar equipos cuando no estén en uso y priorizar reuniones virtuales para reducir desplazamientos.</div>
+    </div>
+
+    <div style="background:#fff;border-radius:14px;padding:18px;border:2px solid #E5F5ED;border-top:5px solid #36B67A">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span style="font-size:28px">☁️</span>
+        <div>
+          <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#1A7A52">Gestión documental digital — POSITIVO ✅</div>
+          <div style="font-size:10px;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Almacenamiento digital de información</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#555;margin-bottom:8px">Uso de herramientas digitales para almacenamiento y gestión documental. Reduce papel.</div>
+      <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:11px;color:#1A7A52;font-weight:700;margin-bottom:6px">✅ Impacto: Disminución del consumo de papel · Significancia: Media · Carácter: +</div>
+      <div style="background:#E5F5ED;border-radius:8px;padding:8px 12px;font-size:11px;color:#1A7A52;font-weight:600">🛡️ Control: Carpetas digitales, repositorios compartidos y trazabilidad electrónica.</div>
+    </div>
+
+    <div style="background:#fff;border-radius:14px;padding:18px;border:2px solid #FFE0C0;border-top:5px solid #B85A00">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span style="font-size:28px">🗑️</span>
+        <div>
+          <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#B85A00">Generación de residuos sólidos</div>
+          <div style="font-size:10px;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Disposición de residuos ordinarios y aprovechables</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#555;margin-bottom:8px">Residuos derivados de actividades administrativas y de oficina del proceso.</div>
+      <div style="background:#FFF9E0;border-radius:8px;padding:8px 12px;font-size:11px;color:#9A6800;font-weight:700;margin-bottom:6px">⚠️ Impacto: Contaminación por disposición inadecuada · Significancia: Baja</div>
+      <div style="background:#FEF0E0;border-radius:8px;padding:8px 12px;font-size:11px;color:#B85A00;font-weight:600">🛡️ Control: Separación en la fuente y disposición en puntos establecidos por la entidad.</div>
+    </div>
+
+    <div style="background:#fff;border-radius:14px;padding:18px;border:2px solid #FFF9E0;border-top:5px solid #C8A800">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span style="font-size:28px">⚡</span>
+        <div>
+          <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#9A7C00">Consumo energético — Equipos de oficina</div>
+          <div style="font-size:10px;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Uso de computadores y equipos tecnológicos</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#555;margin-bottom:8px">Uso permanente de equipos tecnológicos para desarrollo de actividades administrativas.</div>
+      <div style="background:#FFF9E0;border-radius:8px;padding:8px 12px;font-size:11px;color:#9A6800;font-weight:700;margin-bottom:6px">⚠️ Impacto: Incremento en uso de recursos energéticos · Significancia: Baja</div>
+      <div style="background:#FFF9E0;border-radius:8px;padding:8px 12px;font-size:11px;color:#9A7C00;font-weight:600">🛡️ Control: Configurar ahorro de energía, apagar equipos al finalizar la jornada y desconectar cargadores.</div>
+    </div>
+
+    <div style="background:#fff;border-radius:14px;padding:18px;border:2px solid #FFE8E8;border-top:5px solid #D94F4F">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span style="font-size:28px">✈️</span>
+        <div>
+          <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#B00020">Emisiones por desplazamientos</div>
+          <div style="font-size:10px;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:0.5px">Participación en reuniones y eventos presenciales</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#555;margin-bottom:8px">Uso de transporte terrestre y aéreo para asistencia a reuniones o eventos institucionales.</div>
+      <div style="background:#FFE8E8;border-radius:8px;padding:8px 12px;font-size:11px;color:#B00020;font-weight:700;margin-bottom:6px">⚠️ Impacto: Emisiones atmosféricas · Recurso afectado: Aire · Significancia: Baja</div>
+      <div style="background:#FFE8E8;border-radius:8px;padding:8px 12px;font-size:11px;color:#B00020;font-weight:600">🛡️ Control: Priorizar reuniones virtuales cuando sea viable y optimizar desplazamientos presenciales.</div>
+    </div>
+
+  </div>
+
+  <!-- RESUMEN SIGNIFICANCIAS -->
+  <div style="background:#1A1035;border-radius:14px;padding:18px 22px;margin-bottom:20px;display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#FFC107;text-transform:uppercase;letter-spacing:1px;flex-shrink:0">Resumen de significancias GCI</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <div style="background:rgba(26,122,82,0.3);border:2px solid #36B67A;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:800;color:#86EFAC">✅ Media · 1 aspecto positivo</div>
+      <div style="background:rgba(200,168,0,0.2);border:2px solid #C8A800;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:800;color:#FEF08A">🟡 Baja · 5 aspectos negativos</div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:700;color:rgba(255,255,255,0.7)">Recurso afectado: Energía · Suelo · Aire</div>
+    </div>
+  </div>
+
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+    <div style="background:#FFE8E8;border-radius:14px;padding:18px;border:2px solid #E85050">
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#B00020;margin-bottom:10px">🚨 Emergencia: Desperdicio de agua</div>
+      <ul style="list-style:none;font-size:13px;color:#7A0010">
+        <li style="padding:4px 0;border-bottom:1px dashed rgba(184,0,32,0.15)">1️⃣ Cerrar llave maestra o de paso</li>
+        <li style="padding:4px 0">2️⃣ Informar a Gestión Ambiental</li>
+      </ul>
+    </div>
+    <div style="background:#FEF0E0;border-radius:14px;padding:18px;border:2px solid #F0891A">
+      <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#B85A00;margin-bottom:10px">🚨 Emergencia: Derrame de sustancias</div>
+      <ul style="list-style:none;font-size:13px;color:#7A3A00">
+        <li style="padding:4px 0;border-bottom:1px dashed rgba(184,90,0,0.15)">1️⃣ Evaluar — usar EPP</li>
+        <li style="padding:4px 0;border-bottom:1px dashed rgba(184,90,0,0.15)">2️⃣ Evitar que llegue a sifones</li>
+        <li style="padding:4px 0">3️⃣ Recolectar y reportar Tarjeta STOP</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tip-box" style="background:#1A1035;border-radius:12px">
+    <span class="tip-ico">⚠️</span>
+    <div class="tip-content"><h4 style="color:#FFC107">Tarjeta STOP</h4><p style="color:rgba(255,255,255,0.85)">Reportar en NeoGestión (código <strong style="color:#FFC107">FR-1300-SIPG-07_4</strong>) o al correo <strong style="color:#FFC107">siplag@gestiondelriesgo.gov.co</strong></p></div>
+  </div>
+</div>
+
+<div class="divider" style="background:linear-gradient(90deg,#6B2FA0,#9C59D1)"></div>
+
+<!-- ======== ISO 27001 ======== -->
+<div class="iso-section" style="background:#F8F0FF">
+  <div class="iso-header" style="background:linear-gradient(135deg,#6B2FA0,#8A45C0)">
+    <span class="iso-header-ico">🔒</span>
+    <div class="iso-header-content">
+      <span class="iso-badge" style="background:rgba(255,255,255,0.2);color:#fff">ISO 27001:2013</span>
+      <h2 style="color:#fff">Seguridad de la Información — SGSI</h2>
+      <p style="color:rgba(255,255,255,0.85)">Garantizar y preservar la Confidencialidad, Integridad y Disponibilidad de la información de la UNGRD.</p>
+    </div>
+  </div>
+
+  <div class="cia-row">
+    <div class="cia-card" style="background:#E8F0FB;border:2px solid #4A84E8">
+      <span class="cia-ico">🔑</span>
+      <div class="cia-title" style="color:#1B5EBF">Confidencialidad</div>
+      <p class="cia-text" style="color:#2A5099">Solo personal <strong>autorizado</strong> accede a la información institucional</p>
+    </div>
+    <div class="cia-card" style="background:#E5F5ED;border:2px solid #36B67A">
+      <span class="cia-ico">🛡️</span>
+      <div class="cia-title" style="color:#1A7A52">Integridad</div>
+      <p class="cia-text" style="color:#2E7A52">Protección contra <strong>modificaciones no autorizadas</strong>, daños o destrucción</p>
+    </div>
+    <div class="cia-card" style="background:#F2EAFE;border:2px solid #9C59D1">
+      <span class="cia-ico">🌐</span>
+      <div class="cia-title" style="color:#6B2FA0">Disponibilidad</div>
+      <p class="cia-text" style="color:#5A2090">Acceso asegurado <strong>cuando el usuario lo requiera</strong></p>
+    </div>
+  </div>
+
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#6B2FA0">📋 4 Políticas clave del SGSI — El manual contiene 20 en total</div>
+  <div class="pol-grid2">
+    <div class="pol-card2" style="background:#fff;border-left-color:#6B2FA0">
+      <span class="pol-ico">🖥️</span>
+      <h4 style="color:#6B2FA0">Escritorio y pantalla limpia</h4>
+      <p>Información no expuesta al ausentarse. Bloquear sesión con <strong>Windows + L</strong>. Recoger impresos inmediatamente.</p>
+    </div>
+    <div class="pol-card2" style="background:#fff;border-left-color:#1B5EBF">
+      <span class="pol-ico">📤</span>
+      <h4 style="color:#1B5EBF">Transferencia de información</h4>
+      <p>Controles para la correcta transferencia dentro de la entidad y con partes externas.</p>
+    </div>
+    <div class="pol-card2" style="background:#fff;border-left-color:#1A7A52">
+      <span class="pol-ico">🔐</span>
+      <h4 style="color:#1A7A52">Control de acceso</h4>
+      <p>Gestión de usuarios y contraseñas con principio de <strong>acceso mínimo necesario</strong> según rol.</p>
+    </div>
+    <div class="pol-card2" style="background:#fff;border-left-color:#B85A00">
+      <span class="pol-ico">📱</span>
+      <h4 style="color:#B85A00">Trae tu propio dispositivo</h4>
+      <p>Requerimientos para el uso adecuado de tablets y portátiles personales en el trabajo.</p>
+    </div>
+  </div>
+
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#6B2FA0">🙋 Responsabilidades de todos</div>
+  <div class="resp-cards">
+    <div class="resp-card" style="background:#fff;border:1.5px solid #F2EAFE"><span class="resp-n" style="color:#9C59D1">1</span><span class="resp-text">Conocer y cumplir el Manual SGSI</span></div>
+    <div class="resp-card" style="background:#fff;border:1.5px solid #F2EAFE"><span class="resp-n" style="color:#9C59D1">2</span><span class="resp-text">Conocer, aceptar y cumplir las Políticas de Seguridad</span></div>
+    <div class="resp-card" style="background:#fff;border:1.5px solid #F2EAFE"><span class="resp-n" style="color:#9C59D1">3</span><span class="resp-text">Reportar incidentes de Seguridad de la Información</span></div>
+    <div class="resp-card" style="background:#fff;border:1.5px solid #F2EAFE"><span class="resp-n" style="color:#9C59D1">4</span><span class="resp-text">Reportar fallas en sistemas, equipos y elementos vulnerables</span></div>
+  </div>
+
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#6B2FA0">💡 Recomendaciones de seguridad</div>
+  <div class="recs">
+    <div class="rec" style="background:#fff;border:2px solid #F2EAFE"><span class="rec-ico">📧</span><div class="rec-text" style="color:#6B2FA0">No usar correo institucional en sitios sospechosos</div></div>
+    <div class="rec" style="background:#fff;border:2px solid #F2EAFE"><span class="rec-ico">🚫</span><div class="rec-text" style="color:#6B2FA0">No responder correos SPAM o sospechosos</div></div>
+    <div class="rec" style="background:#fff;border:2px solid #F2EAFE"><span class="rec-ico">🔗</span><div class="rec-text" style="color:#6B2FA0">No dar clic en enlaces de correos desconocidos</div></div>
+    <div class="rec" style="background:#fff;border:2px solid #F2EAFE"><span class="rec-ico">🪪</span><div class="rec-text" style="color:#6B2FA0">Portar el carnet en lugar visible siempre</div></div>
+    <div class="rec" style="background:#fff;border:2px solid #F2EAFE"><span class="rec-ico">💻</span><div class="rec-text" style="color:#6B2FA0">Bloquear sesión al ausentarse: Windows + L</div></div>
+    <div class="rec" style="background:#fff;border:2px solid #F2EAFE"><span class="rec-ico">💾</span><div class="rec-text" style="color:#6B2FA0">Guardar info en servidores institucionales</div></div>
+    <div class="rec" style="background:#fff;border:2px solid #F2EAFE"><span class="rec-ico">🖨️</span><div class="rec-text" style="color:#6B2FA0">Recoger impresos de la bandeja inmediatamente</div></div>
+    <div class="rec" style="background:#fff;border:2px solid #F2EAFE"><span class="rec-ico">🧹</span><div class="rec-text" style="color:#6B2FA0">Escritorio limpio y ordenado siempre</div></div>
+  </div>
+
+  <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;color:#6B2FA0">📞 Canales de reporte de incidentes</div>
+  <div class="canales">
+    <div class="canal" style="background:#F2EAFE;border:2px solid #9C59D1">
+      <span class="canal-ico">📬</span>
+      <span class="canal-label" style="color:#6B2FA0">Correo GTI</span>
+      <div class="canal-val" style="color:#1A1035">ayuda@gestiondelriesgo.gov.co</div>
+    </div>
+    <div class="canal" style="background:#E8F0FB;border:2px solid #4A84E8">
+      <span class="canal-ico">🖥️</span>
+      <span class="canal-label" style="color:#1B5EBF">Mesa de ayuda GLPI</span>
+      <div class="canal-val" style="color:#1A1035">soporte.gestiondelriesgo.gov.co</div>
+    </div>
+    <div class="canal" style="background:#1A1035;border:2px solid #FFC107">
+      <span class="canal-ico">🔑</span>
+      <span class="canal-label" style="color:#FFC107">Permisos y excepciones</span>
+      <div class="canal-val" style="color:rgba(255,255,255,0.8)">Oficial de Seguridad de la Información</div>
+    </div>
+  </div>
+
+  <div class="msg-box" style="background:linear-gradient(135deg,#6B2FA0,#8A45C0)">
+    <h4 style="color:#FFC107">🔐 Recuerda siempre</h4>
+    <p style="color:rgba(255,255,255,0.9)">La seguridad de la información es <strong>responsabilidad de TODOS</strong>. Una brecha afecta directamente la reputación institucional y la confianza de los ciudadanos. Cada acción cuenta.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="background:#1A1035;padding:32px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+  <div>
+    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:16px;color:#FFC107;margin-bottom:6px">UNGRD · SIPLAG 2026</div>
+    <div style="font-size:12px;color:rgba(255,255,255,0.5)">ISO 9001:2015 · ISO 45001:2018 · ISO 14001:2015 · ISO 27001:2013</div>
+  </div>
+  <div style="font-size:12px;color:rgba(255,255,255,0.4);text-align:right">Grupo de Cooperación Internacional</div>
+</div>
+
+</div>
+</body>
+</html>
